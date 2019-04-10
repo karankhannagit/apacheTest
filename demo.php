@@ -17,7 +17,6 @@ else {
     $gco_output = exec(
             "git clone https://github.com/karankhannagit/apacheTest.git" . "\n"
         .   "rsync -auxz  ./apacheTest/ /efs/web/web".$build_number." --delete" . "\n"
-        .   "rm /efs/web/html" . "\n"
         .   "ln -sfn /efs/web/web".$build_number." /efs/web/html". "\n"
 
                                  );
