@@ -7,7 +7,7 @@ $gco_output = exec(       "rm -rf apacheTest" . "\n"
                         . "ls -al" . "\n"
                         . "rsync -auxz  ./apacheTest/ /efs/web/web".$build_number." --delete" . "\n"
                         //. "rm /efs/web/html" . "\n"
-                        . "ln -s /efs/web/web".$build_number." /efs/web/html". "\n"
+                        . "ln -sf /efs/web/web".$build_number." /efs/web/html". "\n"
                     );
     $array = explode("\n", $gco_output);
     $array = array_filter($array);
