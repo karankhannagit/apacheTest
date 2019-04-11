@@ -6,7 +6,7 @@ if (file_exists($filename)) {
     $gco_output = exec(
             "cd ".$filename . "\n"
         .   "git checkout origin/master" . "\n"
-        .   "rsync -auxz  . /efs/web/web".$build_number." --delete" . "\n"
+        .   "rsync -auxz  . /mnt/efs/web/web".$build_number." --delete" . "\n"
         .   "ln -sfn /mnt/efs/web/web".$build_number." /mnt/efs/web/html". "\n"   
 
                                  );
