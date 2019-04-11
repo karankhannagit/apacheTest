@@ -7,7 +7,7 @@ if (file_exists($filename)) {
             "cd ".$filename . "\n"
         .   "git checkout origin/master" . "\n"
         .   "rsync -auxz  . /efs/web/web".$build_number." --delete" . "\n"
-        .   "ln -sfn /efs/web/web".$build_number." /efs/web/html". "\n"   
+        .   "ln -sfn /mnt/efs/web/web".$build_number." /mnt/efs/web/html". "\n"   
 
                                  );
 } 
@@ -17,7 +17,7 @@ else {
     $gco_output = exec(
             "git clone https://github.com/karankhannagit/apacheTest.git" . "\n"
         .   "rsync -auxz  ./apacheTest/ /efs/web/web".$build_number." --delete" . "\n"
-        .   "ln -sfn /efs/web/web".$build_number." /efs/web/html". "\n"
+        .   "ln -sfn /mnt/efs/web/web".$build_number." /mnt/efs/web/html". "\n"
 
                                  );
 
